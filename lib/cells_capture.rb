@@ -27,7 +27,7 @@ module Cell
 
           if content || block_given?
             content = capture(&block) if block_given?
-            @global_tpl.view_flow.append(name, content) if content
+            @global_tpl.view_flow.append(name, content) if content && @global_tpl
             nil
           else
             @view_flow.get(name)
